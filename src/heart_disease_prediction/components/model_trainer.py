@@ -49,10 +49,8 @@ class ModelTrainer:
             obj=model
           )
 
-            return accuracy, f1, precision, recall
-            logging.info(f"Mean Absolute Error: {mae}")
-            logging.info(f"Mean Squared Error: {mse}")
-
+            return accuracy
+            
             save_object(
             file_path=self.model_trainer_config.trained_model_file_path,
             obj=model

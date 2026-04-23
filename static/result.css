@@ -1,0 +1,113 @@
+/* Background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+/* 3D Card */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        10px 10px 30px rgba(0,0,0,0.7),
+        -5px -5px 20px rgba(255,255,255,0.05);
+
+    transform: perspective(1000px) rotateX(5deg);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: perspective(1000px) rotateX(0deg) scale(1.03);
+}
+
+/* Title */
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Result Box */
+.result-box {
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+
+    box-shadow:
+        inset 4px 4px 10px rgba(0,0,0,0.6),
+        inset -4px -4px 10px rgba(255,255,255,0.05);
+
+    animation: pop 0.4s ease;
+}
+
+/* Danger Result */
+.danger {
+    background: linear-gradient(145deg, #ff416c, #ff4b2b);
+}
+
+/* Safe Result */
+.safe {
+    background: linear-gradient(145deg, #11998e, #38ef7d);
+}
+
+/* Info Text */
+.info {
+    margin-top: 20px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+    background: linear-gradient(145deg, #00c6ff, #0072ff);
+
+    box-shadow:
+        5px 5px 15px rgba(0,0,0,0.6),
+        -5px -5px 15px rgba(255,255,255,0.1);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        8px 8px 20px rgba(0,0,0,0.7);
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+/* Animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

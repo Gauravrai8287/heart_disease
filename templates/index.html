@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Heart Disease Prediction</h1>
+    <p class="subtitle">Enter patient details to predict risk</p>
+
+    <form action="/predict" method="POST" class="form-card">
+        
+        <div class="grid">
+
+            <div class="input-group">
+                <label>Age</label>
+                <input type="number" name="age"  min="0" max="100"required>
+            </div>
+
+            <div class="input-group">
+                <label>Sex (1=Male, 0=Female)</label>
+                <input type="number" name="sex" min="0" max="1" required>
+            </div>
+
+            <div class="input-group">
+                <label>Chest Pain (0 to 3)</label>
+                <input type="number" name="cp"min="0" max="3"  required>
+            </div>
+
+            <div class="input-group">
+                <label>Resting BP(90 to 200)</label>
+                <input type="number" name="trestbps" min="80" max="200"  required>
+            </div>
+
+            <div class="input-group">
+                <label>Cholesterol(chol)</label>
+                <input type="number" name="chol" min="0" max="1000" required>
+            </div>
+
+            <div class="input-group">
+                <label>Fasting Sugar(0 to 1)</label>
+                <input type="number" name="fbs" min="0" max="2" required>
+            </div>
+             <div class="input-group">
+                <label>Resting Electrocardiographic(0 to 4)</label>
+                <input type="number" name="restecg" min="0" max="4" required>
+            </div>
+            <div class="input-group">
+                <label>Max Heart Rate(60 to 250 )</label>
+                <input type="number" name="thalachh" min="60" max="250" required>
+            </div>
+
+            <div class="input-group">
+                <label>Exercise Angina(0 to 1)</label>
+                <input type="number" name="exang" min="0" max="1" required>
+            </div>
+
+            <div class="input-group">
+                <label>Oldpeak(0 to 7)</label>
+                <input type="number" name="oldpeak" min="0" max="7" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label>Slope(0 to 3)</label>
+                <input type="number" name="slope" min="0" max="3"  required>
+            </div>
+
+            <div class="input-group">
+                <label>CA(0 to 4)</label>
+                <input type="number" name="ca" min="0" max="4" required>
+            </div>
+
+            <div class="input-group">
+                <label>Thal(0 to 7)</label>
+                <input type="number" name="thal" min="0" max="7" required>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction Result:</h2>
+        <p>{{ Result }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
